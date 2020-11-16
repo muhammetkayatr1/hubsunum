@@ -1,0 +1,37 @@
+﻿@model VideoListViewModel
+
+<section class="pt-0">
+    <div class="container">
+        <div style="text-align: center;" class="mb-20">
+            <img src="~/img/halictvlogo.png" style="width: 50%">
+        </div>
+        <div class="row">
+            <div class="col-lg-6 pt-50 p-30" style="background: #ecbc00; border-top-left-radius: 10px; border-bottom-left-radius: 10px">
+                <h1 class="pr-30 pl-30" style="color: #002c5c">HALİÇ TV'DE BU HAFTA</h1>
+                <div id="customers-testimonials" class="owl-carousel">
+                    @foreach (var item in Model.Videos)
+                    {
+                        @await Html.PartialAsync("_VideoIndex", item)
+                    }
+                </div>
+            </div>
+            <div class="col-lg-6" style="background: #002c5c; border-top-right-radius: 10px; border-bottom-right-radius: 10px">
+                <img src="">
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: black">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="#" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+﻿@model NewsListViewModel
+<div class="case_study_area pb-0" style="background: #f2f2f3 !important
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-40 white_text">
+                    <h3 style="color: #072366">Son Haberler</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="case_active owl-carousel">
+
+                    @foreach (var item in Model.News)
+                    {
+                        @await Html.PartialAsync("_News", item)}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@model News
+<div class="single_study img-hover-zoom">
+    <div class="thumb img-hover-zoom" style="display: block; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+        <a style="display: block">
+            <img style="border-top-right-radius: 10px; border-top-left-radius: 10px" src="~/img/@Model.Image" alt="">
+
+        </a>
+    </div>
+    <div class="subheading p-30" style="        background: white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px
+">
+        <h3 style="font-weight: 700"><a class="text-article-title" asp-controller="home" asp-action="NewsDetails" asp-route-url="@Model.Url">@Model.Title</a></h3>
+        <p class="text-article-content" style="color: #555"> @Model.Description</p>
+        <div style="text-align: end; line-height: 0">
+            <a asp-controller="home" asp-action="NewsDetails" asp-route-url="@Model.Url"><i style="font-size: 25px; line-height: 0" class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+    </div>
+
+</div>
